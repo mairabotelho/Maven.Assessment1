@@ -1,5 +1,8 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -10,7 +13,19 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with evens removed
      */
     public Integer[] deleteEvens(Integer[] ints) {
-        return null;
+        List<Integer> tempListEven = new ArrayList<Integer>();;
+
+        for(int index = 0; index < ints.length; index++) {
+
+            if (ints[index] % 2 != 0){
+               tempListEven.add(ints[index]);
+            }
+        }
+
+        Integer[] result = new Integer[tempListEven.size()];
+        result = tempListEven.toArray(result);
+
+        return result;
     }
 
     /**
@@ -19,7 +34,19 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with odds removed
      */
     public Integer[] deleteOdds(Integer[] ints) {
-        return null;
+        List<Integer> tempListOdd = new ArrayList<Integer>();;
+
+        for(int index = 0; index < ints.length; index++) {
+
+            if (ints[index] % 2 == 0){
+                tempListOdd.add(ints[index]);
+            }
+        }
+
+        Integer[] result = new Integer[tempListOdd.size()];
+        result = tempListOdd.toArray(result);
+
+        return result;
     }
 
     /**
@@ -28,7 +55,19 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by 3 removed
      */
     public Integer[] deleteMultiplesOf3(Integer[] ints) {
-        return null;
+        List<Integer> tempList = new ArrayList<Integer>();;
+
+        for(int index = 0; index < ints.length; index++) {
+
+            if (ints[index] % 3 != 0){
+                tempList.add(ints[index]);
+            }
+        }
+
+        Integer[] result = new Integer[tempList.size()];
+        result = tempList.toArray(result);
+
+        return result;
     }
 
     /**
@@ -38,6 +77,18 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by `multiple` removed
      */
     public Integer[] deleteMultiplesOfN(Integer[] ints, int multiple) {
-        return null;
+        List<Integer> tempList = new ArrayList<Integer>();;
+
+        for(int index = 0; index < ints.length; index++) {
+
+            if (ints[index] % multiple != 0){
+                tempList.add(ints[index]);
+            }
+        }
+
+        Integer[] result = new Integer[tempList.size()];
+        result = tempList.toArray(result);
+
+        return result;
     }
 }

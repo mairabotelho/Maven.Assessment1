@@ -1,5 +1,8 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -8,10 +11,20 @@ public class StringUtils {
     /**
      * @param sentence a string containing words delimited by spaces, representative of a sentence
      * @return an array of strings, representative of each word in the sentence
-     * given a string containing words delimited by spaces, representative of a sentence, return an array of strings, each element representative of a respective word in the sentence
+     * given a string containing words delimited by spaces, representative of a sentence,
+     * return an array of strings, each element representative of a respective word in the sentence
      */
     public static String[] getWords(String sentence) {
-        return null;
+        List<String> listTemp = new ArrayList<>();
+
+        for(String word : sentence.split(" ")){
+            listTemp.add(word);
+
+        }
+
+        String[] result = listTemp.toArray(new String[0]);
+
+        return result;
     }
 
 
@@ -21,7 +34,11 @@ public class StringUtils {
      * given a string containing words delimited by spaces, representative of a sentence, return the first word of the sentence
      */
     public static String getFirstWord(String sentence) {
-        return null;
+
+
+        String[] firstWord = sentence.split(" ");
+
+        return firstWord[0];
     }
 
     /**
@@ -30,7 +47,15 @@ public class StringUtils {
      * given a string containing words delimited by spaces, representative of a sentence, return the first word with identical contents in reverse order
      */
     public static String reverseFirstWord(String sentence) {
-        return null;
+        String[] firstWord = sentence.split(" ");
+        String word = firstWord[0];
+        String wordReverse = "";
+
+        for(int index = word.length() - 1; index >= 0; index--) {
+            wordReverse += word.charAt(index);
+        }
+
+        return wordReverse;
     }
 
     /**
@@ -39,7 +64,18 @@ public class StringUtils {
      * given a string containing words delimited by spaces, representative of a sentence, return the first word with identical contents in reverse order with the first character capitalized
      */
     public static String reverseFirstWordThenCamelCase(String sentence) {
-        return null;
+        String[] firstWord = sentence.split(" ");
+        String word = firstWord[0];
+        String wordReverse = "";
+
+        for(int index = word.length() - 1; index >= 0; index--) {
+            wordReverse += word.charAt(index);
+        }
+
+        String answer = Character.toUpperCase(wordReverse.charAt(0)) + wordReverse.substring(1);
+
+        return answer;
+
     }
 
 
@@ -50,7 +86,10 @@ public class StringUtils {
      * given a string and index, return an identical string excluding the character at the specified index
      */
     public static String removeCharacterAtIndex(String str, int index) {
-        return null;
+
+        String result = str.substring(0, index) + str.substring(index + 1);
+
+        return result;
     }
 
 }
