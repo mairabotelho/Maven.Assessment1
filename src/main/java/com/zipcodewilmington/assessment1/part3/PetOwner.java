@@ -5,30 +5,28 @@ package com.zipcodewilmington.assessment1.part3;
  */
 public class PetOwner {
 
-    private String name;
+    private String owner;
     private Pet[] pets;
     /**
      * @param name name of the owner of the Pet
      * @param pets array of Pet object
      */
     public PetOwner(String name,  Pet... pets) {
-        this.name = name;
+        this.owner = name;
         this.pets = pets;
     }
+
 
     /**
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet pet) {
-
     }
 
     /**
      * @param pet pet to be removed from the composite collection Pets
      */
     public void removePet(Pet pet) {
-
-
     }
 
     /**
@@ -49,6 +47,7 @@ public class PetOwner {
      */
     public Integer getYoungetPetAge() {
 
+
         return 0;
     }
 
@@ -67,16 +66,8 @@ public class PetOwner {
      * @return the sum of ages of Pet objects stored in this class divided by the number of Pet object
      */
     public Float getAveragePetAge() {
-        float average;
-        int items = 1;
 
-        for(Pet item : pets) {
-            items++;
-        }
-
-            average = items / pets.length;
-
-        return average;
+        return null;
     }
 
     /**
@@ -90,13 +81,13 @@ public class PetOwner {
      * @return the name property of the Pet
      */
     public String getName() {
-        return name;
+        return owner;
     }
 
     /**
      * @return array representation of animals owned by this PetOwner
      */
     public Pet[] getPets() {
-        return null;
+        return pets;
     }
 }
