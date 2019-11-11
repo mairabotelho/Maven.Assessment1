@@ -21,12 +21,17 @@ public class PetOwner {
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet pet) {
+        pets = new Pet[1];
+        pets[0] = pet;
     }
 
     /**
      * @param pet pet to be removed from the composite collection Pets
      */
     public void removePet(Pet pet) {
+        for(int index = 0; index < pets.length; index++)
+            if(pets[index].equals(pet))
+                pets[index] = null;
     }
 
     /**
@@ -47,8 +52,14 @@ public class PetOwner {
      */
     public Integer getYoungetPetAge() {
 
+        int age = pets[0].getAge();
 
-        return 0;
+        for(int index = 0; index < pets.length; index++)
+            if(age > pets[index].getAge())
+                age = pets[index].getAge();
+
+
+        return age;
     }
 
 
@@ -58,7 +69,15 @@ public class PetOwner {
      * @return the age of the Pet object whose age field is the highest amongst all Pets in this class
      */
     public Integer getOldestPetAge() {
-        return 0;
+
+        int age = pets[0].getAge();
+
+        for(int index = 0; index < pets.length; index++)
+            if(age < pets[index].getAge())
+                age = pets[index].getAge();
+
+
+        return age;
     }
 
 
@@ -66,8 +85,12 @@ public class PetOwner {
      * @return the sum of ages of Pet objects stored in this class divided by the number of Pet object
      */
     public Float getAveragePetAge() {
+        int ages = 0;
 
-        return null;
+        for(Pet pet : pets)
+            ages += pet.getAge();
+
+        return Float.valueOf(ages/pets.length);
     }
 
     /**
